@@ -1,0 +1,101 @@
+movieID views rating relYear title
+1 89 9.7 1994 "The Shawshank Redemption"
+2 505 1.4 1972 "The Godfather"
+3 542 9.8 2008 "The Dark Knight"
+4 140 8.7 1974 "The Godfather Part II"
+5 185 9.2 1957 "12 Angry Men"
+6 149 7.0 1993 "Schindler's List"
+7 694 8.8 2003 "The Lord of the Rings: The Return of the King"
+8 903 1.9 1994 "Pulp Fiction"
+9 319 8.7 2001 "The Lord of the Rings: The Fellowship of the Ring"
+10 866 3.1 1966 "The Good, the Bad and the Ugly"
+11 799 5.9 1994 "Forrest Gump"
+12 596 3.0 1999 "Fight Club"
+13 833 9.4 2010 "Inception"
+14 221 6.3 2002 "The Lord of the Rings: The Two Towers"
+15 696 7.7 1980 "Star Wars: Episode V - The Empire Strikes Back"
+16 630 6.0 1999 "The Matrix"
+17 215 7.7 1990 "Goodfellas"
+18 8 9.0 1975 "One Flew Over the Cuckoo's Nest"
+19 737 2.8 1995 "Se7en"
+20 32 7.5 1954 "Seven Samurai"
+21 898 3.7 1946 "It's a Wonderful Life"
+22 991 3.7 1991 "The Silence of the Lambs"
+23 976 3.7 2002 "City of God"
+24 323 1.7 1998 "Saving Private Ryan"
+25 365 9.5 1997 "Life is Beautiful"
+26 595 3.9 2014 "Interstellar"
+27 240 6.5 1999 "The Green Mile"
+28 727 4.5 1977 "Star Wars: Episode IV - A New Hope"
+29 781 6.2 1991 "Terminator 2: Judgement Day"
+30 362 9.7 1985 "Back to the Future"
+31 446 7.6 2001 "Spirited Away"
+32 626 7.0 1960 "Psycho"
+33 633 9.1 2002 "The Pianist"
+34 182 5.4 2019 "Parasite"
+35 744 4.0 1994 "Leon: The Professional"
+36 391 6.8 1994 "The Lion King"
+37 95 4.8 2000 "Gladiator"
+38 596 7.8 1998 "American History X"
+39 342 3.5 2006 "The Departed"
+40 43 3.1 1995 "The Usual Suspects"
+41 87 5.8 2006 "The Prestige"
+42 709 3.6 2014 "Whiplash"
+43 112 2.4 1942 "Casablanca"
+44 361 1.3 2011 "The Intouchables"
+45 260 9.2 1962 "Harakiri"
+46 488 5.5 1988 "Grave of the Fireflies"
+47 316 7.5 1936 "Modern Times"
+48 380 7.8 1968 "Once Upon a Time in the West"
+49 371 9.1 1954 "Rear Window"
+50 491 8.2 1979 "Alien"
+51 64 9.7 1931 “City Lights”
+52 422 9.9 1988 “Cinema Paradiso"
+53 777 7.6 1979 “Apocalypse Now"
+54 301 5.8 2000 “Momento”
+55 337 8.1 1981 “Indiana Jones and the Raiders of the Lost Ark”
+56 70 8.3 2012 “Django Unchained”
+57 17 8.2 2008 “WALL-E”
+58 214 9.0 2006 “The Lives of Others”
+59 681 6.6 1950 “Sunset Blvd.”
+60 759 2.3 1957 “Paths of Glory”
+61 704 3.2 1980 “The Shining”
+62 950 3.3 1940 “The Great Dictator”
+63 918 5.6 2018 “Avengers: Infinity War”
+64 874 8.0 1957 “Witness for the Prosecution”
+65 201 6.5 1986 “Aliens”
+66 438 7.7 1999 “American Beauty”
+67 471 2.9 2018 “Spider-Man: Into the Spider-Verse”
+68 536 6.8 1964 “Dr. Strangelove or How I learned to Stop Worrying and Love the Bomb”
+69 812 3.6 2012 “The Dark Knight Rises”
+70 946 7.8 2003 “Oldboy”
+71 152 6.3 2019 “Joker”
+72 467 4.9 1984 “Amadeus”
+73 437 1.6 2009 “Inglorious Bastards”
+74 101 8.4 1995 “Toy Story”
+75 505 4.2 2017 “Coco”
+76 607 1.5 1995 “Braveheart”
+77 946 9.9 1981 “The Boat”
+78 585 2.5 2019 “Avengers: Endgame”
+79 66 7.9 1997 “Princess Mononoke”
+80 393 3.1 2022 “Top Gun: Maverick”
+81 714 3.8 1984 “Once Upon a Time in America”
+82 528 7.1 1997 “Good Will Hunting”
+83 115 9.7 2016 “Your Name.”
+84 849 3.4 2000 “Requiem for a Dream”
+85 64 3.4 2010 “Toy Story 3”
+86 902 2.7 1952 “Singin’ in the Rain”
+87 793 1.2 2009 “3 Idiots”
+88 910 9.5 1963 “High and Low”
+89 574 9.0 1983 “Star Wars: Episode VI - Return of the Jedi”
+90 441 3.7 1968 “2001: A Space Odyssey”
+91 661 9.4 2004 “Eternal Sunshine of the Spotless Mind”
+92 633 9.2 2018 “Capernaum”
+93 478 3.7 1992 “Reservoir Dogs”
+94 868 2.9 2012 “The Hunt”
+95 61 9.9 1941 “Citizen Kane”
+96 206 1.6 1962 “Lawrence of Arabia”
+97 635 9.5 1931 “M”
+98 479 2.6 1985 “Come and See”
+99 869 4.6 1959 “North by Northwest”
+100 918 8.8 1958 “Vertigo”
