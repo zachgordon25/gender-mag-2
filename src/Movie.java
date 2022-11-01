@@ -1,4 +1,5 @@
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -85,16 +86,36 @@ public class Movie {
         return movies;
     }
 
-    public static List<Movie> readData(List<Movie> movies) {
+    public static List<Movie> readData(List<Movie> movies) throws FileNotFoundException {
+        java.io.File file = new java.io.File("src/movies.txt");
+
+        Scanner input = new Scanner(file);
+
+        int i = 0;
+        while (input.hasNext()) {
+            int movieID = input.nextInt();
+            int views = input.nextInt();
+            double rating = input.nextDouble();
+            int relYear = input.nextInt();
+            String title = input.nextLine();
+            //  System.out.println(movieID + " " + views + " " + rating + " " + relYear + " " + title + " ");
+            movies.add(new Movie(movieID, views, rating, relYear, title));
+            i++;
+        }
+        input.close();
         return movies;
     }
 
 
     public static void main(String[] args) throws FileNotFoundException {
-        Movie[] newMovie = new Movie[100];
-        Movie[] movies = readData(newMovie);
-        for (Movie m : movies) {
-            System.out.print(m);
-        }
+        Movie[] moviesArr = new Movie[100];
+        readData(moviesArr);
+        //        for (Movie m : moviesArr) {
+        //            System.out.print(m);
+        //        }
+
+        List<Movie> moviesList = new ArrayList<>();
+        readData(moviesList);
+        System.out.println(moviesList);
     }
 }
