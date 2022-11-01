@@ -2,6 +2,8 @@ import java.io.*;
 import java.util.*;
 
 public class Movie {
+    static File file = new File("src/movies.txt");
+
     private int movieID;
     private int views;
     private double rating;
@@ -64,9 +66,7 @@ public class Movie {
         return movieID + " " + views + " " + rating + " " + relYear + " " + title + '\n';
     }
 
-    public static Movie[] readData(Movie[] movies) throws FileNotFoundException {
-        java.io.File file = new java.io.File("src/movies.txt");
-
+    public static void readData(Movie[] movies) throws FileNotFoundException {
         Scanner input = new Scanner(file);
 
         int i = 0;
@@ -76,46 +76,39 @@ public class Movie {
             double rating = input.nextDouble();
             int relYear = input.nextInt();
             String title = input.nextLine();
-            //  System.out.println(movieID + " " + views + " " + rating + " " + relYear + " " + title + " ");
             movies[i] = new Movie(movieID, views, rating, relYear, title);
             i++;
         }
         input.close();
-        return movies;
     }
 
-    public static List<Movie> readData(List<Movie> movies) throws FileNotFoundException {
-        java.io.File file = new java.io.File("src/movies.txt");
-
+    public static void readData(List<Movie> movies) throws FileNotFoundException {
         Scanner input = new Scanner(file);
 
-        int i = 0;
         while (input.hasNext()) {
             int movieID = input.nextInt();
             int views = input.nextInt();
             double rating = input.nextDouble();
             int relYear = input.nextInt();
             String title = input.nextLine();
-            //  System.out.println(movieID + " " + views + " " + rating + " " + relYear + " " + title + " ");
+
             movies.add(new Movie(movieID, views, rating, relYear, title));
-            i++;
         }
         input.close();
-        return movies;
     }
 
     public static void search(Movie[] movies, double rating) {
-        for (int i = 0; i < movies.length; i++) {
-            if (movies[i].getRating() == rating) {
-                System.out.println(movies[i]);
+        for (Movie movie : movies) {
+            if (movie.getRating() == rating) {
+                System.out.println(movie);
             }
         }
     }
 
     public static void search(List<Movie> movies, int year, double rating) {
-        for (int i = 0; i < movies.size(); i++) {
-            if (movies.get(i).getRelYear() == year && movies.get(i).getRating() == rating) {
-                System.out.println(movies.get(i));
+        for (Movie movie : movies) {
+            if (movie.getRelYear() == year && movie.getRating() == rating) {
+                System.out.println(movie);
             }
         }
     }
@@ -127,15 +120,20 @@ public class Movie {
         }
     }
 
+    public static void compareMovies(List<Movie> movies) {
+        movies.sort(Comparator.comparing(Movie::getRelYear).thenComparing(Movie::getRating));
+        movies.forEach(System.out::println);
+    }
+
     public static void main(String[] args) throws FileNotFoundException {
         Movie[] moviesArr = new Movie[100];
         readData(moviesArr);
-        //        search(moviesArr, 1.2);
+        search(moviesArr, 1.2);
         compareMovies(moviesArr);
 
         List<Movie> moviesList = new ArrayList<>();
         readData(moviesList);
-        //        search(moviesList, 1985, 9.7);
-
+        search(moviesList, 1985, 9.7);
+        compareMovies(moviesList);
     }
 }
