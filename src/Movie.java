@@ -1,8 +1,6 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
+import java.io.FileNotFoundException;
 import java.util.List;
+import java.util.Scanner;
 
 public class Movie {
     private int movieID;
@@ -67,7 +65,23 @@ public class Movie {
         return movieID + " " + views + " " + rating + " " + relYear + " " + title + '\n';
     }
 
-    public static Movie[] readData(Movie[] movies) {
+    public static Movie[] readData(Movie[] movies) throws FileNotFoundException {
+        java.io.File file = new java.io.File("src/movies.txt");
+
+        Scanner input = new Scanner(file);
+
+        int i = 0;
+        while (input.hasNext()) {
+            int movieID = input.nextInt();
+            int views = input.nextInt();
+            double rating = input.nextDouble();
+            int relYear = input.nextInt();
+            String title = input.nextLine();
+            //  System.out.println(movieID + " " + views + " " + rating + " " + relYear + " " + title + " ");
+            movies[i] = new Movie(movieID, views, rating, relYear, title);
+            i++;
+        }
+        input.close();
         return movies;
     }
 
@@ -75,43 +89,12 @@ public class Movie {
         return movies;
     }
 
-    // Used to write movieID, views, and rating to txt file
-    //    ALL NAMES AND YEARS WILL BE LOST IF RAN AGAIN!
-    /*    private static void writeMovies() throws FileNotFoundException {
-        PrintWriter outputFile = new PrintWriter("src/movies.txt");
 
-        outputFile.print("movieID views rating relYear title\n");
-        for (int i = 1; i <= 100; i++) {
-            outputFile.print(new Movie(i, ((int) (Math.random() * 1000) + 1),
-                                       (Double.parseDouble(String.format("%.1f", (Math.random() * 9) + 1))), 0,
-                                       "name"));
+    public static void main(String[] args) throws FileNotFoundException {
+        Movie[] newMovie = new Movie[100];
+        Movie[] movies = readData(newMovie);
+        for (Movie m : movies) {
+            System.out.print(m);
         }
-        outputFile.close();
-    }*/
-
-    public static void main(String[] args) throws IOException {
-        List<Movie> moviesList = new ArrayList<>();
-        BufferedReader br = new BufferedReader(new FileReader("src/movies.txt"));
-        String line = br.readLine();
-        String[] columns = line.split(" | \" \" ");
-
-        //        while ((br.readLine()) != null) {
-        moviesList.add(
-                new Movie(Integer.parseInt(columns[0]), Integer.parseInt(columns[1]), Double.parseDouble(columns[2]),
-                          Integer.parseInt(columns[3]), columns[4]));
-        //        }
-        //        moviesList.add(new Movie(1, 89, 9.7, 1994, "The Shawshank Redemption")); // for testing
-        //        moviesList.add(new Movie(2, 505, 1.4, 1972, "The Godfather")); // for testing
-        System.out.println(readData(moviesList));
-
-        // for testing
-        /*
-                Movie[] moviesArr = new Movie[2];
-                moviesArr[0] = new Movie(3, 542, 9.8, 2008, "The Dark Knight");
-                moviesArr[1] = new Movie(4, 140, 8.7, 1974, "The Godfather Part II");
-                for (Movie m : moviesArr) {
-                    System.out.println(m);
-                }
-        */
     }
 }
