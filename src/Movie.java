@@ -1,7 +1,5 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Movie {
     private int movieID;
@@ -106,16 +104,38 @@ public class Movie {
         return movies;
     }
 
+    public static void search(Movie[] movies, double rating) {
+        for (int i = 0; i < movies.length; i++) {
+            if (movies[i].getRating() == rating) {
+                System.out.println(movies[i]);
+            }
+        }
+    }
+
+    public static void search(List<Movie> movies, int year, double rating) {
+        for (int i = 0; i < movies.size(); i++) {
+            if (movies.get(i).getRelYear() == year && movies.get(i).getRating() == rating) {
+                System.out.println(movies.get(i));
+            }
+        }
+    }
+
+    public static void compareMovies(Movie[] movies) {
+        Arrays.sort(movies, Comparator.comparing(Movie::getRating));
+        for (Movie m : movies) {
+            System.out.println(m);
+        }
+    }
 
     public static void main(String[] args) throws FileNotFoundException {
         Movie[] moviesArr = new Movie[100];
         readData(moviesArr);
-        //        for (Movie m : moviesArr) {
-        //            System.out.print(m);
-        //        }
+        //        search(moviesArr, 1.2);
+        compareMovies(moviesArr);
 
         List<Movie> moviesList = new ArrayList<>();
         readData(moviesList);
-        System.out.println(moviesList);
+        //        search(moviesList, 1985, 9.7);
+
     }
 }
