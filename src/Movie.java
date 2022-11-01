@@ -1,5 +1,7 @@
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Movie {
@@ -73,8 +75,9 @@ public class Movie {
         return movies;
     }
 
-
-    private static void writeMovies() throws FileNotFoundException {
+    // Used to write movieID, views, and rating to txt file
+    //    ALL NAMES AND YEARS WILL BE LOST IF RAN AGAIN!
+    /*    private static void writeMovies() throws FileNotFoundException {
         PrintWriter outputFile = new PrintWriter("src/movies.txt");
 
         outputFile.print("movieID views rating relYear title\n");
@@ -84,10 +87,31 @@ public class Movie {
                                        "name"));
         }
         outputFile.close();
-    }
+    }*/
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        List<Movie> moviesList = new ArrayList<>();
+        BufferedReader br = new BufferedReader(new FileReader("src/movies.txt"));
+        String line = br.readLine();
+        String[] columns = line.split(" | \" \" ");
 
+        //        while ((br.readLine()) != null) {
+        moviesList.add(
+                new Movie(Integer.parseInt(columns[0]), Integer.parseInt(columns[1]), Double.parseDouble(columns[2]),
+                          Integer.parseInt(columns[3]), columns[4]));
+        //        }
+        //        moviesList.add(new Movie(1, 89, 9.7, 1994, "The Shawshank Redemption")); // for testing
+        //        moviesList.add(new Movie(2, 505, 1.4, 1972, "The Godfather")); // for testing
+        System.out.println(readData(moviesList));
+
+        // for testing
+        /*
+                Movie[] moviesArr = new Movie[2];
+                moviesArr[0] = new Movie(3, 542, 9.8, 2008, "The Dark Knight");
+                moviesArr[1] = new Movie(4, 140, 8.7, 1974, "The Godfather Part II");
+                for (Movie m : moviesArr) {
+                    System.out.println(m);
+                }
+        */
     }
 }
-

@@ -1,4 +1,3 @@
-movieID views rating relYear title
 1 89 9.7 1994 "The Shawshank Redemption"
 2 505 1.4 1972 "The Godfather"
 3 542 9.8 2008 "The Dark Knight"
