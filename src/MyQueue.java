@@ -1,7 +1,10 @@
+import java.io.*;
+import java.lang.reflect.Array;
+import java.util.*;
 interface MyQueue<E>{
     //methods to use
     //adds a movie to the heap
-    String addMovie();
+    String addMovie(String x);
     //Clears the Entire Heap
     void clearAll();
     //tells if the heap is empty
@@ -11,40 +14,45 @@ interface MyQueue<E>{
     //pushes a movie up a heap
     void pushMovie();
     //removes one movie from the heap
-    void removeMovie();
+    void removeMovie(int x);
     //returns the size of the heap
     int size();
 }
-class MyHeap<E> implements MyQueue{
+class MyHeap<E> implements MyQueue {
     //creates Heap
+    ArrayList mList = new ArrayList<>();
 
-    //adds a movie to the heap
-    public String addMovie() {
+    //adds only a movie to the heap
+    public String addMovie(String x){
+        mList.add(x);
         return null;
     }
 
     public void clearAll() {
-
+        int i = 0;
+        while (i <= mList.size()) mList.remove(i);
     }
 
     public boolean isEmpty() {
-
-        return false;
+        return mList.size() == 0;
     }
 
     public String peekMovie() {
-        return null;
+        return (String) mList.get(0);
     }
 
     public void pushMovie() {
 
     }
 
-    public void removeMovie() {
-
+    public void removeMovie(int x) {
+        mList.remove(x);
     }
 
     public int size() {
-        return 0;
+        return mList.size();
     }
+    //heapsort
 }
+
+

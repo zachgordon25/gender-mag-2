@@ -135,5 +135,16 @@ public class Movie {
         readData(moviesList);
         search(moviesList, 1985, 9.7);
         compareMovies(moviesList);
+
+        System.out.println("-----Part2-----");
+        //creates heap
+        File file = new File("src/movies.txt");
+        Scanner sc = new Scanner(file);
+        MyHeap mList= new MyHeap();
+        for(int i=0; i<20; i++) {
+            String title = sc.nextLine();
+            mList.addMovie(title);
+        }
     }
 }
+
