@@ -138,13 +138,19 @@ public class Movie {
 
         System.out.println("-----Part2-----");
         //creates heap
-        File file = new File("src/movies.txt");
-        Scanner sc = new Scanner(file);
-        MyHeap mList= new MyHeap();
+        MyHeap moList= new MyHeap();
         for(int i=0; i<20; i++) {
-            String title = sc.nextLine();
-            mList.addMovie(title);
+            moList.addMovie(i);
         }
+        System.out.println("Arraylist "+moList.size());
+        moList.removeMovie(5);
+        moList.removeMovie(10);
+        moList.removeMovie(15);
+
+        for(int i=0; i < 8;i++){
+            moList.heapSort(i);
+        }
+        moList.pushMovie();
     }
 }
 
